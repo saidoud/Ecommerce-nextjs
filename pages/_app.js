@@ -2,20 +2,23 @@
 import { StylesProvider, createGenerateClassName } from '@mui/styles';
 import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
+
 // third-party
 import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
 import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
 
 import { theme } from 'theme';
+import createEmotionCache from 'createEmotionCache';
 
-const clientSideEmotionCache = createCache({ key: 'css', prepend: true });
+// Client-side cache, shared for the whole session of the user in the browser.
+const clientSideEmotionCache = createEmotionCache();
+
 const generateClassName = createGenerateClassName({
     productionPrefix: 'c'
 });
 
-function MyApp(props: any) {
+function MyApp(props) {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
     return (
         <StylesProvider injectFirst generateClassName={generateClassName}>

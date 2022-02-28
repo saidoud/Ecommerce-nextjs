@@ -16,14 +16,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
-            <main>
-                <p>{t('hello')}</p>
-                <Box sx={{ p: 2 }}>
-                    <Button variant="contained" size="large">
-                        Add to cart
-                    </Button>
-                </Box>
-            </main>
+            <main></main>
         </div>
     );
 };

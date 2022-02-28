@@ -19,21 +19,21 @@ function Header() {
                         </ButtonBase>
                     </Box>
                     {/* Search Section */}
-                    <Box sx={{ display: { xs: 'block', md: 'block' } }}>
+                    <Box sx={{ display: { xs: 'none', md: 'block' }, transition: '0.5s' }}>
                         <OutlinedInput
                             id="input-search-header"
                             size="small"
                             value={searchValue}
                             onChange={(e) => setSearchValue(e.target.value)}
                             placeholder="Search"
-                            startAdornment={
-                                <InputAdornment position="start">
+                            endAdornment={
+                                <InputAdornment position="end">
                                     <SearchIcon fontSize="small" />
                                 </InputAdornment>
                             }
                             aria-describedby="search-helper-text"
                             inputProps={{ 'aria-label': 'weight' }}
-                            sx={{ width: 400 }}
+                            sx={{ width: 440 }}
                         />
                     </Box>
                     {/* Cart Section */}

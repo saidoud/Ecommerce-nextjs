@@ -1,7 +1,6 @@
 import React from 'react';
-import type { NextPage } from 'next';
 
-function Product<NextPage>() {
+function Product() {
     return <div>Product</div>;
 }
 
