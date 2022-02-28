@@ -1,17 +1,20 @@
 // material-ui
 import { useTheme } from '@mui/material/styles';
 import MuiAvatar from '@mui/material/Avatar';
+import { OverridableStringUnion } from '@mui/types';
 
 // ==============================|| AVATAR ||============================== //
 interface AvatarProps {
-    color: string;
-    outline: boolean;
-    size: string;
-    sx: object;
-    others: any;
+    children?: JSX.Element;
+    color?: string;
+    outline?: boolean;
+    size?: string;
+    sx?: object;
+    variant?: OverridableStringUnion<'circular' | 'rounded' | 'square'>;
+    others?: any;
 }
 
-const Avatar = ({ color, outline, size, sx, ...others }: AvatarProps) => {
+const Avatar = ({ children, color, outline, size, sx, variant, ...others }: AvatarProps) => {
     const theme = useTheme();
 
     const colorSX = color && !outline && { color: theme.palette.background.paper, bgcolor: `${color}.main` };
@@ -63,7 +66,11 @@ const Avatar = ({ color, outline, size, sx, ...others }: AvatarProps) => {
             sizeSX = {};
     }
 
-    return <MuiAvatar sx={{ ...colorSX, ...outlineSX, ...sizeSX, ...sx }} {...others} />;
+    return (
+        <MuiAvatar variant={variant} sx={{ ...colorSX, ...outlineSX, ...sizeSX, ...sx }} {...others}>
+            {children}
+        </MuiAvatar>
+    );
 };
 
 export default Avatar;

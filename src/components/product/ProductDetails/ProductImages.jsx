@@ -42,25 +42,25 @@ function ProductImages() {
             {/* Image Section */}
             <Grid item xs={12}>
                 <Card>
-                    <motion.div>
-                        <CardMedia component="img" image={selected} sx={{ overflow: 'hidden', cursor: 'zoom-in', transition: '0.5s' }} />
-                    </motion.div>
+                    <CardMedia component="img" image={selected} sx={{ overflow: 'hidden', cursor: 'zoom-in', transition: '0.5s' }} />
                 </Card>
             </Grid>
             {/* Slider Section */}
             <Grid
                 item
-                xs={11}
+                xs={10}
                 sm={7}
                 md={9}
                 lg={10}
                 xl={8}
                 sx={{
                     '& .slick-next:before': {
-                        color: theme.palette.primary.main
+                        color: theme.palette.primary.main,
+                        fontSize: '25px'
                     },
                     '& .slick-prev:before': {
-                        color: theme.palette.primary.main
+                        color: theme.palette.primary.main,
+                        fontSize: '25px'
                     }
                 }}
             >
