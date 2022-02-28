@@ -1,6 +1,5 @@
 import { Container } from '@mui/material';
 import React from 'react';
-import AppContainer from './AppContainer';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -12,7 +11,7 @@ function Layout({ children }: LayoutProps) {
         <>
             <Header />
             <main>
-                <Container>{children}</Container>
+                <Container sx={{ pt: 2 }}>{children}</Container>
             </main>
             <Footer />
         </>
