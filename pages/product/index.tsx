@@ -1,3 +1,4 @@
+import Header from 'layout/Header';
 import React from 'react';
 
 function Product() {
