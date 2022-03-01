@@ -13,6 +13,7 @@ import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 // project import
 import Avatar from 'components/ui-components/extended/Avatar';
 import Chip from 'components/ui-components/extended/Chip';
+import Increment from 'components/ui-components/Increment';
 
 function ProductInfo() {
     return (
@@ -48,7 +49,7 @@ function ProductInfo() {
             {/* Rating */}
             <Grid item xs={12}>
                 <Stack direction={'row'} alignItems="center" spacing={1}>
-                    <Rating name="simple-controlled" value={4} precision={0.1} readOnly />
+                    <Rating name="simple-controlled" value={4.5} precision={0.1} readOnly />
                     <Typography variant="caption">({'344'}+)</Typography>
                 </Stack>
             </Grid>
@@ -69,21 +70,42 @@ function ProductInfo() {
             </Grid>
             {/* Colors */}
             <Grid item xs={12}>
-                Colors
+                <Grid container alignItems={'center'}>
+                    <Grid item xs={3} md={2}>
+                        <Typography variant="body2">Colors</Typography>
+                    </Grid>
+                    <Grid item xs={3} md={2}>
+                        <Increment />
+                    </Grid>
+                </Grid>
             </Grid>
             {/* Size */}
             <Grid item xs={12}>
-                Size
+                <Grid container alignItems={'center'}>
+                    <Grid item xs={3} md={2}>
+                        <Typography variant="body2">Size</Typography>
+                    </Grid>
+                    <Grid item xs={3} md={2}>
+                        <Increment />
+                    </Grid>
+                </Grid>
             </Grid>
             {/* Quantity */}
             <Grid item xs={12}>
-                Quantity
+                <Grid container alignItems={'center'}>
+                    <Grid item xs={3} md={2}>
+                        <Typography variant="body2">Quantity</Typography>
+                    </Grid>
+                    <Grid item xs={3} md={2}>
+                        <Increment />
+                    </Grid>
+                </Grid>
             </Grid>
             <Grid item xs={12}>
                 <Divider />
             </Grid>
             {/* Buy / Add to cart Button */}
-            <Grid item xs={12}>
+            <Grid item xs={12} md={10}>
                 <Grid container spacing={1}>
                     <Grid item xs={6}>
                         <Button fullWidth color="primary" variant="contained" size="large" startIcon={<ShoppingCartTwoToneIcon />}>

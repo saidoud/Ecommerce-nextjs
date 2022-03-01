@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, IconButton, Link, Rating, Stack, Typography } from '@mui/material';
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Grid, IconButton, Link, Rating, Stack, Typography } from '@mui/material';
 
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 
@@ -14,7 +14,11 @@ function ProductCard() {
             }}
         >
             <CardMedia sx={{ height: 220 }} image={'assets/e-commerce/prod-1.jpg'} title="Contemplative Reptile" component={Link} />
-            <CardContent>
+            <Box
+                sx={(theme) => ({
+                    p: theme.spacing(1)
+                })}
+            >
                 <Grid container spacing={1}>
                     <Grid item xs={12}>
                         <Typography component={Link} variant="subtitle1" sx={{ textDecoration: 'none' }}>
@@ -39,15 +43,13 @@ function ProductCard() {
                                     </Typography>
                                 </Grid>
                             </Grid>
+                            <IconButton color="primary">
+                                <ShoppingCartTwoToneIcon fontSize="medium" />
+                            </IconButton>
                         </Stack>
                     </Grid>
                 </Grid>
-            </CardContent>
-            <CardActions>
-                <IconButton color="primary">
-                    <ShoppingCartTwoToneIcon fontSize="small" />
-                </IconButton>
-            </CardActions>
+            </Box>
         </Card>
     );
 }

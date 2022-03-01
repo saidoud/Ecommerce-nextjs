@@ -5,7 +5,7 @@ import { OverridableStringUnion } from '@mui/types';
 
 // ==============================|| AVATAR ||============================== //
 interface AvatarProps {
-    children?: JSX.Element;
+    children?: any;
     color?: string;
     outline?: boolean;
     size?: string;

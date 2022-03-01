@@ -18,10 +18,8 @@ function ProductImages() {
     const products = [
         'assets/e-commerce/prod-1.jpg',
         'assets/e-commerce/prod-2.jpg',
-        'assets/e-commerce/prod-3.jpg',
-        'assets/e-commerce/prod-4.jpg',
-        'assets/e-commerce/prod-5.jpg',
-        'assets/e-commerce/prod-6.jpg',
+        'assets/e-commerce/prod-7.jpg',
+        'assets/e-commerce/prod-8.jpg',
         'assets/e-commerce/prod-7.jpg',
         'assets/e-commerce/prod-8.jpg'
     ];
