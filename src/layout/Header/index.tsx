@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { AppBar, ButtonBase, Link, Toolbar, Box, OutlinedInput, InputAdornment, Stack, IconButton, Badge } from '@mui/material';
 
+// next-js
+import { useRouter } from 'next/router';
+
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 function Header() {
     const [searchValue, setSearchValue] = useState('');
+    const router = useRouter();
 
     return (
         <AppBar position="static" color="inherit">
@@ -41,7 +45,7 @@ function Header() {
                         <IconButton>
                             <PersonIcon />
                         </IconButton>
-                        <IconButton>
+                        <IconButton onClick={() => router.push('/product')}>
                             <Badge badgeContent={4} color="error">
                                 <ShoppingCartIcon />
                             </Badge>

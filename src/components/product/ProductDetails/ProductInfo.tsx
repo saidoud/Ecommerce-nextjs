@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Stack, Typography, Rating } from '@mui/material';
+import { Grid, Stack, Typography, Rating, Divider, Button } from '@mui/material';
 
 // assets
 import CircleIcon from '@mui/icons-material/Circle';
@@ -51,6 +51,51 @@ function ProductInfo() {
                     <Rating name="simple-controlled" value={4} precision={0.1} readOnly />
                     <Typography variant="caption">({'344'}+)</Typography>
                 </Stack>
+            </Grid>
+            {/* Pricing */}
+            <Grid item xs={12}>
+                <Stack direction="row" alignItems={'center'} spacing={1}>
+                    <Typography variant="h5" component="p" color="primary">
+                        $390
+                    </Typography>
+                    <Typography variant="body1" sx={{ textDecoration: 'line-through' }}>
+                        $500
+                    </Typography>
+                    <Typography variant="caption">(Inclusive of all taxes)</Typography>
+                </Stack>
+            </Grid>
+            <Grid item xs={12}>
+                <Divider />
+            </Grid>
+            {/* Colors */}
+            <Grid item xs={12}>
+                Colors
+            </Grid>
+            {/* Size */}
+            <Grid item xs={12}>
+                Size
+            </Grid>
+            {/* Quantity */}
+            <Grid item xs={12}>
+                Quantity
+            </Grid>
+            <Grid item xs={12}>
+                <Divider />
+            </Grid>
+            {/* Buy / Add to cart Button */}
+            <Grid item xs={12}>
+                <Grid container spacing={1}>
+                    <Grid item xs={6}>
+                        <Button fullWidth color="primary" variant="contained" size="large" startIcon={<ShoppingCartTwoToneIcon />}>
+                            Add to Cart
+                        </Button>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Button type="submit" fullWidth color="secondary" variant="contained" size="large">
+                            Buy Now
+                        </Button>
+                    </Grid>
+                </Grid>
             </Grid>
         </Grid>
     );
