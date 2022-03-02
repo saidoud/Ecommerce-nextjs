@@ -1,21 +1,24 @@
-import React from 'react';
-import { Grid, Stack, Typography, Rating, Divider, Button } from '@mui/material';
+import React, { useState } from 'react';
+import { Grid, Stack, Typography, Rating, Divider, Button, IconButton, FormControl, Select, MenuItem } from '@mui/material';
+import { SelectChangeEvent } from '@mui/material/Select';
 
 // assets
-import CircleIcon from '@mui/icons-material/Circle';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import StarTwoToneIcon from '@mui/icons-material/StarTwoTone';
-import StarBorderTwoToneIcon from '@mui/icons-material/StarBorderTwoTone';
-import AddIcon from '@mui/icons-material/Add';
-import RemoveIcon from '@mui/icons-material/Remove';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 // project import
-import Avatar from 'components/ui-components/extended/Avatar';
 import Chip from 'components/ui-components/extended/Chip';
 import Increment from 'components/ui-components/Increment';
 
 function ProductInfo() {
+    const [favoris, setFavoris] = useState(false);
+    const [size, setSize] = useState('10');
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setSize(event.target.value as string);
+    };
+
     return (
         <Grid container spacing={2}>
             {/* Product Tilte */}
@@ -34,9 +37,9 @@ function ProductInfo() {
                             </Stack>
                         </Grid>
                     </Grid>
-                    <Avatar variant="rounded" sx={{ bgcolor: 'grey.200', color: 'grey.800' }}>
-                        <FavoriteBorderIcon />
-                    </Avatar>
+                    <IconButton onClick={() => setFavoris(!favoris)}>
+                        {favoris ? <FavoriteIcon color="error" /> : <FavoriteBorderIcon color="primary" />}
+                    </IconButton>
                 </Stack>
             </Grid>
             {/* Product Description */}
@@ -74,7 +77,7 @@ function ProductInfo() {
                     <Grid item xs={3} md={2}>
                         <Typography variant="body2">Colors</Typography>
                     </Grid>
-                    <Grid item xs={3} md={2}>
+                    <Grid item xs={4} md={2}>
                         <Increment />
                     </Grid>
                 </Grid>
@@ -85,8 +88,14 @@ function ProductInfo() {
                     <Grid item xs={3} md={2}>
                         <Typography variant="body2">Size</Typography>
                     </Grid>
-                    <Grid item xs={3} md={2}>
-                        <Increment />
+                    <Grid item xs={4} md={2}>
+                        <FormControl fullWidth size="small">
+                            <Select labelId="demo-simple-select-label" id="demo-simple-select" value={size} onChange={handleChange}>
+                                <MenuItem value={10}>10</MenuItem>
+                                <MenuItem value={20}>20</MenuItem>
+                                <MenuItem value={30}>30</MenuItem>
+                            </Select>
+                        </FormControl>
                     </Grid>
                 </Grid>
             </Grid>
@@ -96,7 +105,7 @@ function ProductInfo() {
                     <Grid item xs={3} md={2}>
                         <Typography variant="body2">Quantity</Typography>
                     </Grid>
-                    <Grid item xs={3} md={2}>
+                    <Grid item xs={4} md={2}>
                         <Increment />
                     </Grid>
                 </Grid>

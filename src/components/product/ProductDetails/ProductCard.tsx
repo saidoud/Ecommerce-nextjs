@@ -1,19 +1,16 @@
 import React from 'react';
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Grid, IconButton, Link, Rating, Stack, Typography } from '@mui/material';
+import { Box, Card, CardMedia, Grid, IconButton, Link, Rating, Stack, Typography } from '@mui/material';
 
+// third-party
+
+// asstes
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 
 function ProductCard() {
     return (
-        <Card
-            sx={{
-                '&:hover': {
-                    transform: 'scale3d(1.02, 1.02, 1)',
-                    transition: 'all .4s ease-in-out'
-                }
-            }}
-        >
-            <CardMedia sx={{ height: 220 }} image={'assets/e-commerce/prod-1.jpg'} title="Contemplative Reptile" component={Link} />
+        <Card>
+            <CardMedia sx={{ height: 300 }} image={'assets/e-commerce/prod-2.jpg'} title="Contemplative Reptile" component={'img'} />
+
             <Box
                 sx={(theme) => ({
                     p: theme.spacing(1)

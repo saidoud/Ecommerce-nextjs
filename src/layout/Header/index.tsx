@@ -8,52 +8,67 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
+// project-import
+import Cart from 'components/cart';
+
 function Header() {
     const [searchValue, setSearchValue] = useState('');
+    const [cartOpen, setCartOpen] = useState(false);
     const router = useRouter();
 
+    const handleOpen = () => {
+        setCartOpen(true);
+    };
+    const handleClose = () => {
+        setCartOpen(false);
+    };
+
     return (
-        <AppBar position="static" color="inherit">
-            <Toolbar>
-                <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ flexGrow: 1 }}>
-                    {/* Logo Section */}
-                    <Box component="span" sx={{ display: { xs: 'block', md: 'block' } }}>
-                        <ButtonBase disableRipple component={Link} href="#">
-                            <img src={'assets/logo.svg'} alt="Logo" width="100" />
-                        </ButtonBase>
-                    </Box>
-                    {/* Search Section */}
-                    <Box sx={{ display: { xs: 'none', md: 'block' }, transition: '0.5s' }}>
-                        <OutlinedInput
-                            id="input-search-header"
-                            size="small"
-                            value={searchValue}
-                            onChange={(e) => setSearchValue(e.target.value)}
-                            placeholder="Search"
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <SearchIcon fontSize="small" />
-                                </InputAdornment>
-                            }
-                            aria-describedby="search-helper-text"
-                            inputProps={{ 'aria-label': 'weight' }}
-                            sx={{ width: 440 }}
-                        />
-                    </Box>
-                    {/* Cart Section */}
-                    <Stack direction="row" justifyContent="space-between" spacing={2}>
-                        <IconButton>
-                            <PersonIcon />
-                        </IconButton>
-                        <IconButton onClick={() => router.push('/product')}>
-                            <Badge badgeContent={4} color="error">
-                                <ShoppingCartIcon />
-                            </Badge>
-                        </IconButton>
+        <>
+            <AppBar position="static" color="inherit">
+                <Toolbar>
+                    <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ flexGrow: 1 }}>
+                        {/* Logo Section */}
+                        <Box component="span" sx={{ display: { xs: 'block', md: 'block' } }}>
+                            <ButtonBase disableRipple onClick={() => router.push('/')}>
+                                <img src={'assets/logo.svg'} alt="Logo" width="100" />
+                            </ButtonBase>
+                        </Box>
+                        {/* Search Section */}
+                        <Box sx={{ display: { xs: 'none', md: 'block' }, transition: '0.5s' }}>
+                            <OutlinedInput
+                                id="input-search-header"
+                                size="small"
+                                value={searchValue}
+                                onChange={(e) => setSearchValue(e.target.value)}
+                                placeholder="Search"
+                                endAdornment={
+                                    <InputAdornment position="end">
+                                        <SearchIcon fontSize="small" />
+                                    </InputAdornment>
+                                }
+                                aria-describedby="search-helper-text"
+                                inputProps={{ 'aria-label': 'weight' }}
+                                sx={{ width: 440 }}
+                            />
+                        </Box>
+                        {/* Cart Section */}
+                        <Stack direction="row" justifyContent="space-between" spacing={2}>
+                            <IconButton onClick={() => router.push('/product')}>
+                                <PersonIcon />
+                            </IconButton>
+                            <IconButton onClick={handleOpen}>
+                                <Badge badgeContent={4} color="error">
+                                    <ShoppingCartIcon />
+                                </Badge>
+                            </IconButton>
+                        </Stack>
                     </Stack>
-                </Stack>
-            </Toolbar>
-        </AppBar>
+                </Toolbar>
+            </AppBar>
+            {/* Cart Drawe */}
+            <Cart open={cartOpen} handleClose={handleClose} />
+        </>
     );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 
 // project-import
 import ProductImages from 'components/product/ProductDetails/ProductImages';
@@ -12,7 +13,9 @@ function Product() {
             <Grid item xs={12}>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={5}>
-                        <ProductImages />
+                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 1 }}>
+                            <ProductImages />
+                        </motion.div>
                     </Grid>
                     <Grid item xs={12} md={7}>
                         <ProductInfo />

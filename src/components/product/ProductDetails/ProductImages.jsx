@@ -40,7 +40,9 @@ function ProductImages() {
             {/* Image Section */}
             <Grid item xs={12}>
                 <Card>
-                    <CardMedia component="img" image={selected} sx={{ overflow: 'hidden', cursor: 'zoom-in', transition: '0.5s' }} />
+                    <motion.div whileHover={{ scale: 2 }} transition={{ delay: 0.1, duration: 1, type: 'tween' }}>
+                        <CardMedia component="img" image={selected} sx={{ overflow: 'hidden', cursor: 'zoom-in' }} />
+                    </motion.div>
                 </Card>
             </Grid>
             {/* Slider Section */}

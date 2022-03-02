@@ -8,7 +8,7 @@ function Increment() {
     const [value, setValue] = useState(0);
 
     return (
-        <ButtonGroup size="medium" variant="text" color="inherit" sx={{ border: '1px solid', borderColor: 'grey.400' }}>
+        <ButtonGroup size="small" variant="text" color="inherit" sx={{ border: '1px solid', borderColor: 'grey.400' }} fullWidth>
             <Button
                 key="three"
                 disabled={value <= 1}
