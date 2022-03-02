@@ -9,7 +9,7 @@ import Increment from 'components/ui-components/Increment';
 // Image / (Title/Price) /Quantity    / Delete
 function CartItem() {
     return (
-        <Stack direction="row" alignItems={'center'} spacing={2}>
+        <Stack direction="row" alignItems={'center'} justifyContent="space-between" spacing={2}>
             {/* Image */}
             <Box>
                 <Avatar size="md" variant="rounded" src={'assets/e-commerce/prod-2.jpg'} />
