@@ -17,7 +17,7 @@ function Increment() {
             >
                 <RemoveIcon fontSize="inherit" />
             </Button>
-            <Button key="two" sx={{ pl: 0.5, pr: 0.5 }} disableRipple>
+            <Button key="two" sx={{ pl: 2, pr: 2 }} disableRipple>
                 {value}
             </Button>
             <Button key="one" onClick={() => setValue(value + 1)} sx={{ pl: 0.75, pr: 0.75, minWidth: '0px !important' }}>

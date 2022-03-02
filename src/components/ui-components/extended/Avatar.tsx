@@ -11,10 +11,11 @@ interface AvatarProps {
     size?: string;
     sx?: object;
     variant?: OverridableStringUnion<'circular' | 'rounded' | 'square'>;
-    others?: any;
+    // All Other props
+    [otherProps: string]: any;
 }
 
-const Avatar = ({ children, color, outline, size, sx, variant, ...others }: AvatarProps) => {
+const Avatar = ({ children, color, outline, size, sx, variant, ...otherProps }: AvatarProps) => {
     const theme = useTheme();
 
     const colorSX = color && !outline && { color: theme.palette.background.paper, bgcolor: `${color}.main` };
@@ -67,7 +68,7 @@ const Avatar = ({ children, color, outline, size, sx, variant, ...others }: Avat
     }
 
     return (
-        <MuiAvatar variant={variant} sx={{ ...colorSX, ...outlineSX, ...sizeSX, ...sx }} {...others}>
+        <MuiAvatar variant={variant} sx={{ ...colorSX, ...outlineSX, ...sizeSX, ...sx }} {...otherProps}>
             {children}
         </MuiAvatar>
     );
