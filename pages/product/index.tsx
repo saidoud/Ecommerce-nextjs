@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 // project-import
-import ProductImages from 'components/product/ProductDetails/ProductImages';
-import ProductInfo from 'components/product/ProductDetails/ProductInfo';
-import ProductCard from 'components/product/ProductDetails/ProductCard';
+
+import Loadable from 'components/ui-components/Loadable';
+
+const ProductInfo = Loadable(lazy(() => import('components/product/ProductDetails/ProductInfo')));
+const ProductImages = Loadable(lazy(() => import('components/product/ProductDetails/ProductImages')));
+const ProductCard = Loadable(lazy(() => import('components/product/ProductDetails/ProductCard')));
 
 function Product() {
     return (
@@ -13,9 +16,7 @@ function Product() {
             <Grid item xs={12}>
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={5}>
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 1 }}>
-                            <ProductImages />
-                        </motion.div>
+                        <ProductImages />
                     </Grid>
                     <Grid item xs={12} md={7}>
                         <ProductInfo />

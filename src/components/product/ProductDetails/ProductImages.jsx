@@ -40,9 +40,7 @@ function ProductImages() {
             {/* Image Section */}
             <Grid item xs={12}>
                 <Card>
-                    <motion.div whileHover={{ scale: 2 }} transition={{ delay: 0.1, duration: 1, type: 'tween' }}>
-                        <CardMedia component="img" image={selected} sx={{ overflow: 'hidden', cursor: 'zoom-in' }} />
-                    </motion.div>
+                    <CardMedia component="img" loading="lazy" image={selected} sx={{ overflow: 'hidden', cursor: 'zoom-in' }} />
                 </Card>
             </Grid>
             {/* Slider Section */}
@@ -64,22 +62,20 @@ function ProductImages() {
                     }
                 }}
             >
-                <NoSsr defer>
-                    <Slider {...settings}>
-                        {products.map((item, index) => (
-                            <Box key={index} sx={{ p: 1 }} onClick={() => setSelected(item)}>
-                                <Avatar
-                                    outline={selected === item}
-                                    size={matchDownLG ? 'lg' : 'lg'}
-                                    color="primary"
-                                    src={item}
-                                    variant="rounded"
-                                    sx={{ m: '0 auto', cursor: 'pointer' }}
-                                />
-                            </Box>
-                        ))}
-                    </Slider>
-                </NoSsr>
+                <Slider {...settings}>
+                    {products.map((item, index) => (
+                        <Box key={index} sx={{ p: 1 }} onClick={() => setSelected(item)}>
+                            <Avatar
+                                outline={selected === item}
+                                size={matchDownLG ? 'lg' : 'lg'}
+                                color="primary"
+                                src={item}
+                                variant="rounded"
+                                sx={{ m: '0 auto', cursor: 'pointer' }}
+                            />
+                        </Box>
+                    ))}
+                </Slider>
             </Grid>
         </Grid>
     );

@@ -9,8 +9,7 @@ import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 function ProductCard() {
     return (
         <Card>
-            <CardMedia sx={{ height: 300 }} image={'assets/e-commerce/prod-2.jpg'} title="Contemplative Reptile" component={'img'} />
-
+            <CardMedia sx={{ height: 260 }} image={'assets/e-commerce/prod-2.jpg'} title="Contemplative Reptile" component={'img'} />
             <Box
                 sx={(theme) => ({
                     p: theme.spacing(1)

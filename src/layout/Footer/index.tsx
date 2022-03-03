@@ -12,15 +12,15 @@ var gridSpacing = 2;
 const FooterWrapper = styled('div')(({ theme }) => ({
     padding: '35px 0',
     marginTop: 40,
-    color: '#000',
-    background: theme.palette.divider,
+    color: '#fff',
+    background: '#0c0e30',
     [theme.breakpoints.down('md')]: {
         textAlign: 'center'
     }
 }));
 
 const FooterLink = styled(Link)({
-    color: '#000',
+    color: '#fff',
     display: 'inline-flex',
     alignItems: 'center',
     textDecoration: 'none !important',
@@ -36,8 +36,8 @@ const FooterLink = styled(Link)({
 
 const FooterSubWrapper = styled('div')(({ theme }) => ({
     padding: '20px 0',
-    color: '#000',
-    background: theme.palette.divider,
+    color: '#fff',
+    background: '#0c0e30',
     [theme.breakpoints.down('md')]: {
         textAlign: 'center'
     }
@@ -54,7 +54,7 @@ const FooterPage = () => {
                 <Container>
                     <Grid container alignItems="center" spacing={gridSpacing}>
                         <Grid item xs={12} sm={4}>
-                            <img src={'assets/logo.svg'} alt="Berry" width="100" />
+                            <img src={'assets/logo-dark.svg'} alt="Berry" width="100" />
                         </Grid>
                         <Grid item xs={12} sm={8}>
                             <Grid
