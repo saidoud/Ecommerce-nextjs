@@ -8,19 +8,7 @@ const Home: NextPage = () => {
     const { t } = useTranslation('common');
     return (
         <div>
-            <motion.h2
-                initial={{
-                    color: 'black',
-                    y: -100
-                }}
-                animate={{
-                    fontSize: 100,
-                    color: 'red',
-                    y: 0
-                }}
-            >
-                Framer Motion Application
-            </motion.h2>
+            <h2>Home Page</h2>
         </div>
     );
 };

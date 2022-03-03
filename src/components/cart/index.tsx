@@ -1,7 +1,8 @@
 import React from 'react';
-import { Drawer, Typography, Box, Grid, Stack, IconButton, Divider } from '@mui/material';
+import { Drawer, Typography, Box, Grid, Stack, IconButton, Divider, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import CartItem from './CartItem';
+import OrderSummary from './OrderSummary';
 
 interface CartProps {
     open: boolean;
@@ -9,7 +10,7 @@ interface CartProps {
 }
 function Cart({ open, handleClose }: CartProps) {
     return (
-        <Drawer anchor={'right'} open={open} onClose={handleClose}>
+        <Drawer anchor={'right'} open={open} onClose={handleClose} sx={{ display: 'flex' }}>
             <Box sx={(theme) => ({ px: theme.spacing(1), py: theme.spacing(2), width: 360 })}>
                 <Grid container spacing={2}>
                     {/* Cart Header */}
@@ -35,7 +36,14 @@ function Cart({ open, handleClose }: CartProps) {
                         </Stack>
                     </Grid>
                     {/* Cart Footer */}
-                    <Grid item xs={12}></Grid>
+                    <Grid item xs={12} sx={{ flexGrow: 1 }}>
+                        <OrderSummary />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Button variant="contained" color="primary" fullWidth size="large">
+                            proceed to checkout
+                        </Button>
+                    </Grid>
                 </Grid>
             </Box>
         </Drawer>

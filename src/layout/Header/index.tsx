@@ -23,6 +23,10 @@ function Header() {
         setCartOpen(false);
     };
 
+    const handleKeywordKeyPress: React.KeyboardEventHandler = (e) => {
+        if (e.key === 'Enter') router.push('/search');
+    };
+
     return (
         <>
             <AppBar position="static" color="inherit">
@@ -42,10 +46,11 @@ function Header() {
                                 value={searchValue}
                                 onChange={(e) => setSearchValue(e.target.value)}
                                 placeholder="Search"
+                                onKeyPress={handleKeywordKeyPress}
                                 endAdornment={
-                                    <InputAdornment position="end">
+                                    <IconButton onClick={() => router.push('/search')}>
                                         <SearchIcon fontSize="small" />
-                                    </InputAdornment>
+                                    </IconButton>
                                 }
                                 aria-describedby="search-helper-text"
                                 inputProps={{ 'aria-label': 'weight' }}
