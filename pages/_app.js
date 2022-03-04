@@ -1,3 +1,6 @@
+import '../styles/globals.css'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 // material-ui
 import { StylesProvider, createGenerateClassName } from '@mui/styles';
 import { CssBaseline } from '@mui/material';
@@ -7,8 +10,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import { CacheProvider } from '@emotion/react';
 import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 import { theme } from 'theme';
 import createEmotionCache from 'createEmotionCache';
