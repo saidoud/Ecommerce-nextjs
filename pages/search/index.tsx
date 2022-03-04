@@ -7,7 +7,7 @@ function Search() {
     return (
         <Grid container spacing={6}>
             {/* Filter Section */}
-            <Grid item md={3} sx={{ display: { xs: 'none' } }}>
+            <Grid item md={4} sx={{ display: { xs: 'none', md: 'block' } }}>
                 <Card sx={{ height: '100vh' }}>
                     <CardContent>
                         <Typography>Filter Section</Typography>
@@ -15,7 +15,7 @@ function Search() {
                 </Card>
             </Grid>
             {/* Product List */}
-            <Grid item xs={12} md={9}>
+            <Grid item xs={12} md={8}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6} md={4}>
                         <ProductCard />
