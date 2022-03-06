@@ -10,8 +10,17 @@ interface CartProps {
 }
 function Cart({ open, handleClose }: CartProps) {
     return (
-        <Drawer anchor={'right'} open={open} onClose={handleClose} sx={{ display: 'flex' }}>
-            <Box sx={(theme) => ({ px: theme.spacing(1), py: theme.spacing(2), width: 360 })}>
+        <Drawer anchor={'right'} open={open} onClose={handleClose}>
+            <Box
+                sx={(theme) => ({
+                    display: 'flex',
+                    px: theme.spacing(1),
+                    py: theme.spacing(2),
+                    width: 360,
+                    height: '100vh',
+                    overflow: 'hidden'
+                })}
+            >
                 <Grid container spacing={2}>
                     {/* Cart Header */}
                     <Grid item xs={12}>
@@ -32,9 +41,9 @@ function Cart({ open, handleClose }: CartProps) {
                             <CartItem />
                             <CartItem />
                             <CartItem />
-                            <CartItem />
                         </Stack>
                     </Grid>
+                    <Grid item sx={{ flexGrow: 1 }}></Grid>
                     {/* Cart Footer */}
                     <Grid item xs={12} sx={{ flexGrow: 1 }}>
                         <OrderSummary />

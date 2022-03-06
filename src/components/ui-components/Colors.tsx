@@ -5,7 +5,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import Avatar from './extended/Avatar';
 
 interface ColorsProps {
-    checked: boolean;
+    checked?: boolean;
     colorsData: Array<any>;
 }
 function Colors({ checked, colorsData }: ColorsProps) {

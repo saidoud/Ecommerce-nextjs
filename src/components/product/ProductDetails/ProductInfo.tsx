@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
-import { Grid, Stack, Typography, Rating, Divider, Button, IconButton, FormControl, Select, MenuItem } from '@mui/material';
+import {
+    Grid,
+    Stack,
+    Typography,
+    Rating,
+    Divider,
+    Button,
+    IconButton,
+    FormControl,
+    Select,
+    MenuItem,
+    RadioGroup,
+    Radio,
+    FormControlLabel
+} from '@mui/material';
 import { SelectChangeEvent } from '@mui/material/Select';
 
 // assets
@@ -10,6 +24,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 // project import
 import Chip from 'components/ui-components/extended/Chip';
 import Increment from 'components/ui-components/Increment';
+import Colors from 'components/ui-components/Colors';
+import ColorsOptions from 'constants/ColorsOptions';
 
 function ProductInfo() {
     const [favoris, setFavoris] = useState(false);
@@ -18,6 +34,13 @@ function ProductInfo() {
     const handleChange = (event: SelectChangeEvent) => {
         setSize(event.target.value as string);
     };
+
+    const handleChangeColors = () => {};
+
+    // product color select
+    function getColor(color: string) {
+        return ColorsOptions.filter((item) => item.value === color);
+    }
 
     return (
         <Grid container spacing={2}>
@@ -77,8 +100,28 @@ function ProductInfo() {
                     <Grid item xs={3} md={2}>
                         <Typography variant="body2">Colors</Typography>
                     </Grid>
-                    <Grid item xs={4} md={2}>
-                        <Increment />
+                    <Grid item>
+                        <RadioGroup row onChange={handleChangeColors} aria-label="colors" name="color" id="color" sx={{ ml: 1 }}>
+                            {product.colors &&
+                                product.colors.map((item, index) => {
+                                    const colorsData = getColor(item);
+                                    return (
+                                        <FormControlLabel
+                                            key={index}
+                                            value={item}
+                                            control={
+                                                <Radio
+                                                    sx={{ p: 0.7 }}
+                                                    disableRipple
+                                                    checkedIcon={<Colors checked colorsData={colorsData} />}
+                                                    icon={<Colors colorsData={colorsData} />}
+                                                />
+                                            }
+                                            label=""
+                                        />
+                                    );
+                                })}
+                        </RadioGroup>
                     </Grid>
                 </Grid>
             </Grid>
@@ -132,4 +175,16 @@ function ProductInfo() {
     );
 }
 
+// products list
+const product = {
+    id: 1,
+    image: 'prod-1.jpg',
+    discount: 25,
+    salePrice: 350,
+    offerPrice: 275,
+    gender: 'male',
+    categories: ['fashion', 'books'],
+    colors: ['errorDark', 'orangeDark', 'errorMain', 'secondaryMain'],
+    isStock: true
+};
 export default ProductInfo;
