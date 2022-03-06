@@ -1,14 +1,12 @@
-import React, { lazy } from 'react';
+import React from 'react';
 import { Grid, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
 // project-import
 
-import Loadable from 'components/ui-components/Loadable';
-
-const ProductInfo = Loadable(lazy(() => import('components/product/ProductDetails/ProductInfo')));
-const ProductImages = Loadable(lazy(() => import('components/product/ProductDetails/ProductImages')));
-const ProductCard = Loadable(lazy(() => import('components/product/ProductDetails/ProductCard')));
+import ProductInfo from 'components/product/ProductDetails/ProductInfo';
+import ProductImages from 'components/product/ProductDetails/ProductImages';
+import ProductCard from 'components/product/ProductDetails/ProductCard';
 
 function Product() {
     return (
