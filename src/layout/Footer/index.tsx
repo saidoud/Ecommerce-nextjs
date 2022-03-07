@@ -11,7 +11,7 @@ var gridSpacing = 2;
 // styles
 const FooterWrapper = styled('div')(({ theme }) => ({
     padding: '35px 0',
-    marginTop: 40,
+
     color: '#fff',
     background: '#0c0e30',
     [theme.breakpoints.down('md')]: {

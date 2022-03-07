@@ -11,7 +11,7 @@ function Layout({ children }: LayoutProps) {
         <>
             <Header />
             <main>
-                <Container sx={{ pt: 2 }}>{children}</Container>
+                <Container sx={{ py: 4 }}>{children}</Container>
             </main>
             <Footer />
         </>
