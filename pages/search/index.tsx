@@ -1,9 +1,16 @@
 import ProductCard from 'components/product/ProductDetails/ProductCard';
 import { Card, CardContent, Grid, Typography } from '@mui/material';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ProductSkeloton from 'components/ui-components/cards/skeleton/ProductSkeloton';
 
 function Search() {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(false);
+    }, []);
+
     return (
         <Grid container spacing={4}>
             {/* Filter Section */}
@@ -23,26 +30,30 @@ function Search() {
             </Grid>
             {/* Product List */}
             <Grid item xs={12} md={9}>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <ProductCard />
+                {loading ? (
+                    <ProductSkeloton />
+                ) : (
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <ProductCard />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <ProductCard />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <ProductCard />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <ProductCard />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <ProductCard />
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <ProductCard />
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <ProductCard />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <ProductCard />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <ProductCard />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <ProductCard />
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={4}>
-                        <ProductCard />
-                    </Grid>
-                </Grid>
+                )}
             </Grid>
         </Grid>
     );
