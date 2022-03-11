@@ -3,6 +3,8 @@ import { Card, CardContent, Grid, Typography } from '@mui/material';
 
 import React, { useEffect, useState } from 'react';
 import ProductSkeloton from 'components/ui-components/cards/skeleton/ProductSkeloton';
+import FilterSideBar from 'components/search/FilterSideBar';
+import FilterHeader from 'components/search/FilterHeader';
 
 function Search() {
     const [loading, setLoading] = useState(true);
@@ -12,21 +14,13 @@ function Search() {
     }, []);
 
     return (
-        <Grid container spacing={4}>
+        <Grid container spacing={3}>
             {/* Filter Section */}
             <Grid item xs={12}>
-                <Card>
-                    <CardContent>
-                        <Typography>Filter Section</Typography>
-                    </CardContent>
-                </Card>
+                <FilterHeader />
             </Grid>
             <Grid item md={3} sx={{ display: { xs: 'none', md: 'block' } }}>
-                <Card sx={{ height: '100vh' }}>
-                    <CardContent>
-                        <Typography>Filter Section</Typography>
-                    </CardContent>
-                </Card>
+                <FilterSideBar />
             </Grid>
             {/* Product List */}
             <Grid item xs={12} md={9}>
