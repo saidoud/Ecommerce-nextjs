@@ -5,13 +5,21 @@ import React, { useEffect, useState } from 'react';
 import ProductSkeloton from 'components/ui-components/cards/skeleton/ProductSkeloton';
 import FilterSideBar from 'components/search/FilterSideBar';
 import FilterHeader from 'components/search/FilterHeader';
+import { commerce } from 'lib/commerce';
 
 function Search() {
+    const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const fetchProduct = async () => {
+        const { data } = await commerce.products.list();
+        setProduct(data);
+    };
     useEffect(() => {
-        setLoading(false);
+        fetchProduct();
     }, []);
+
+    console.log(product);
 
     return (
         <Grid container spacing={3}>
