@@ -18,6 +18,7 @@
     "@mui/material": "^5.4.3",
     "@mui/styles": "^5.4.2",
     "@reduxjs/toolkit": "^1.7.2",
+    "@types/chec__commerce.js": "^2.8.4",
     "framer-motion": "^6.2.8",
     "next": "12.1.0",
     "next-i18next": "^10.4.0",

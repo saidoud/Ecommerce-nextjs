@@ -7,19 +7,10 @@ import FilterSideBar from 'components/search/FilterSideBar';
 import FilterHeader from 'components/search/FilterHeader';
 import { commerce } from 'lib/commerce';
 
-function Search() {
-    const [product, setProduct] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    const fetchProduct = async () => {
-        const { data } = await commerce.products.list();
-        setProduct(data);
-    };
-    useEffect(() => {
-        fetchProduct();
-    }, []);
-
-    console.log(product);
+function Search(props) {
+    const { products } = props;
+    const [loading, setLoading] = useState(false);
+    console.log(products);
 
     return (
         <Grid container spacing={3}>
@@ -59,6 +50,15 @@ function Search() {
             </Grid>
         </Grid>
     );
+}
+
+export async function getServerSideProps() {
+    const { data } = await commerce.products.list();
+    return {
+        props: {
+            products: data
+        } // will be passed to the page component as props
+    };
 }
 
 export default Search;
