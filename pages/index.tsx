@@ -1,10 +1,9 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { motion } from 'framer-motion';
-import { Button, Grid, Stack, Typography, Container } from '@mui/material';
-import Image from 'next/image';
+import { Button, Grid, Stack, Typography } from '@mui/material';
 
 const Home: NextPage = () => {
     const { t } = useTranslation('common');

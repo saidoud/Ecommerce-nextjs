@@ -1,15 +1,18 @@
 import React from 'react';
 import { Box, Card, CardMedia, Grid, IconButton, Link, Rating, Stack, Typography } from '@mui/material';
 
-// third-party
-
 // asstes
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
 
-function ProductCard() {
+interface ProductCardProps {
+    imageUrl?: string;
+    title?: string;
+    price?: number;
+}
+function ProductCard({ imageUrl, title, price }: ProductCardProps) {
     return (
         <Card>
-            <CardMedia sx={{ height: 260 }} image={'assets/e-commerce/prod-2.jpg'} title="Contemplative Reptile" component={'img'} />
+            <CardMedia sx={{ height: 260 }} image={imageUrl} title="Contemplative Reptile" component={'img'} />
             <Box
                 sx={(theme) => ({
                     p: theme.spacing(1)
@@ -18,7 +21,7 @@ function ProductCard() {
                 <Grid container spacing={1}>
                     <Grid item xs={12}>
                         <Typography component={Link} variant="subtitle1" sx={{ textDecoration: 'none' }}>
-                            Freshly Baked Mixed
+                            {title}
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
@@ -31,13 +34,13 @@ function ProductCard() {
                         <Stack direction="row" justifyContent="space-between" alignItems="center">
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <Typography variant="h6">${445}</Typography>
+                                    <Typography variant="h6">${price}</Typography>
                                 </Grid>
-                                <Grid item>
+                                {/* <Grid item>
                                     <Typography variant="body1" sx={{ color: 'grey.500', textDecoration: 'line-through' }}>
                                         ${300}
                                     </Typography>
-                                </Grid>
+                                </Grid> */}
                             </Grid>
                             <IconButton color="primary">
                                 <ShoppingCartTwoToneIcon fontSize="medium" />
