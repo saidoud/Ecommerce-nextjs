@@ -23,7 +23,15 @@ const Home: NextPage = () => {
         <section>
             <Box
                 sx={{
-                    '& .slick-arrow::before': {
+                    '& .slick-prev::before': {
+                        position: 'absolute',
+                        right: 30,
+                        color: 'black',
+                        fontSize: 35
+                    },
+                    '& .slick-next::before': {
+                        position: 'absolute',
+                        left: 30,
                         color: 'black',
                         fontSize: 35
                     }
