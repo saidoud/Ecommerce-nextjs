@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Button, Grid, Stack, Typography, Box, Container } from '@mui/material';
+import { Button, Grid, Stack, Typography, Box, Container, Paper } from '@mui/material';
 import Slider from 'react-slick';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -112,6 +112,28 @@ const Home: NextPage = () => {
                     </div>
                 </Slider>
             </Box>
+            <Grid container spacing={2} sx={{ mt: 6 }}>
+                <Grid item xs={3}>
+                    <Paper sx={{ p: 1 }}>
+                        <Typography>Hello</Typography>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper sx={{ p: 1 }}>
+                        <Typography>Hello</Typography>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper sx={{ p: 1 }}>
+                        <Typography>Hello</Typography>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                    <Paper sx={{ p: 1 }}>
+                        <Typography>Hello</Typography>
+                    </Paper>
+                </Grid>
+            </Grid>
         </section>
     );
 };
