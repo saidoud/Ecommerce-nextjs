@@ -113,22 +113,22 @@ const Home: NextPage = () => {
                 </Slider>
             </Box>
             <Grid container spacing={2} sx={{ mt: 6 }}>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={3}>
                     <Paper sx={{ p: 1 }}>
                         <Typography>Hello</Typography>
                     </Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={3}>
                     <Paper sx={{ p: 1 }}>
                         <Typography>Hello</Typography>
                     </Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={3}>
                     <Paper sx={{ p: 1 }}>
                         <Typography>Hello</Typography>
                     </Paper>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={3}>
                     <Paper sx={{ p: 1 }}>
                         <Typography>Hello</Typography>
                     </Paper>
